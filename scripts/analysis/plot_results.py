@@ -161,8 +161,8 @@ def check_comparable(results: dict[str, list[dict]], protocol: str) -> tuple[lis
                 raise ValueError(f"{model} seed {seed} has mismatched run protocol/seed provenance")
             if provenance.get("reference_checkpoint_sha256") != reference_digest:
                 raise ValueError(f"{model} seed {seed} was not initialized from the evaluated reference checkpoint")
-                for key in ("training_sample_ids_sha256", "experiment_config_sha256", "dataset_manifest_sha256",
-                            "split_assignments_sha256", "class_to_id"):
+            for key in ("training_sample_ids_sha256", "experiment_config_sha256", "dataset_manifest_sha256",
+                        "split_assignments_sha256", "class_to_id"):
                 expected_value = reference_provenance.get(key)
                 actual_value = provenance.get(key)
                 if not expected_value or actual_value != expected_value:
@@ -523,6 +523,9 @@ def main(argv: list[str] | None = None):
     parser.add_argument("--protocol", required=True, help="Configured dataset split protocol")
     parser.add_argument("--seed", type=int, help="Select one seed; omit to aggregate matching completed seeds")
     parser.add_argument("--config", type=Path, help="Experiment YAML; defaults exist for the two AVE protocols")
+    parser.add_argument("--provenance-manifest", type=Path,
+                        help="Optional file whose hash is recorded in evaluation provenance; "
+                             "use when cached-feature runs use an index file as their dataset identity")
     parser.add_argument("--result", action="append", required=True,
                         help="Completed result as MODEL=path/to/test_metrics.json; repeat for each model/seed")
     parser.add_argument("--targets", action="append",
@@ -543,7 +546,10 @@ def main(argv: list[str] | None = None):
     results = parse_results(args.result, args.protocol, args.seed)
     names, minority, train_counts = check_comparable(results, args.protocol)
     manifest, _, _ = manifest_counts(config, args.protocol, names)
-    expected_manifest_sha = file_sha256(manifest)
+    provenance_manifest = resolve(args.provenance_manifest) if args.provenance_manifest else manifest
+    if not provenance_manifest.is_file():
+        raise FileNotFoundError(f"Provenance manifest does not exist: {provenance_manifest}")
+    expected_manifest_sha = file_sha256(provenance_manifest)
     for model in MODELS:
         for item in results[model]:
             metrics = item["metrics"]
@@ -602,6 +608,8 @@ def main(argv: list[str] | None = None):
         "class_names": names,
         "class_to_id": {name: class_id for class_id, name in enumerate(names)},
         "dataset_manifest_sha256": (results[MODELS[0]][0]["metrics"].get("run_provenance") or {}).get("dataset_manifest_sha256"),
+        "class_distribution_manifest": str(manifest),
+        "provenance_manifest": str(provenance_manifest),
         "aggregation": "single_seed" if len(seeds) == 1 else "mean and sample standard deviation across seeds",
         "model_conditions": {model: [{"seed": item["seed"],
             "metrics_path": str(item["metrics_path"]),

@@ -148,18 +148,19 @@ All run commands accept `--device auto|cuda|cpu`. `auto` selects CUDA when avail
 Smoke and code checks (not performance results):
 
 ```powershell
-python -m pytest -q -p no:cacheprovider tests
-python -m compileall -q src scripts tests
-python scripts/training/train_reference.py --help
-python scripts/training/estimate_contributions.py --help
-python scripts/training/train_joint.py --help
-python scripts/training/evaluate_test.py --help
-python scripts/training/cache_features.py --help
-python scripts/data/prepare_ave_manifest.py --help
-python scripts/analysis/plot_results.py --help
+.\.venv\Scripts\python.exe -m pytest -q -p no:cacheprovider tests
+.\.venv\Scripts\python.exe -m compileall -q src scripts tests
+.\.venv\Scripts\python.exe scripts/training/train_reference.py --help
+.\.venv\Scripts\python.exe scripts/training/estimate_contributions.py --help
+.\.venv\Scripts\python.exe scripts/training/train_joint.py --help
+.\.venv\Scripts\python.exe scripts/training/evaluate_test.py --help
+.\.venv\Scripts\python.exe scripts/training/cache_features.py --help
+.\.venv\Scripts\python.exe scripts/data/prepare_ave_manifest.py --help
+.\.venv\Scripts\python.exe scripts/data/extract_ave_audio.py --help
+.\.venv\Scripts\python.exe scripts/analysis/plot_results.py --help
 ```
 
-Before the dataset-agnostic refactor, `python -m pytest -q -p no:cacheprovider tests` passed 36 tests, Python compilation and CLI help checks passed, and a real AVE `train_0063` media smoke check succeeded for `full_clip` and rejected the zero-length event interval under `annotated_event`. This refactor adds a separate synthetic integration test; its current execution was interrupted before completion, so it is not yet verified. No full pretrained-model training or 30-epoch experiment has been run and no classification improvement is claimed. The official protocol retains known source overlap; consult the selected protocol when interpreting results.
+The current offline regression suite passes all 39 tests, including the complete synthetic three-condition integration test. Python compilation, CLI help, and `git diff --check` pass. Both local AVE manifests contain 4,140 unique segments across 28 classes; every referenced audio/video path exists, both integrity summaries agree, official split assignments match the archive's split files, and the seed-17 source-disjoint assignments reproduce exactly with no source overlap. The extracted media audit decoded 4,097 audio and 4,097 video files without errors. On the actual `train_0063` media, `full_clip` loads and `annotated_event` rejects its retained zero-length annotation. The configured production PANNs CNN14 + ResNet-18 forward/backward and AVE end-to-end training smoke remain unverified until the official PANNs checkpoint is completely available. No full 30-epoch experiment has been run and no classification improvement is claimed. Official AVE retains source overlap; interpret results under the named protocol.
 
 ## Reusing the pipeline with another dataset
 

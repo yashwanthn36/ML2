@@ -14,6 +14,7 @@ from torch.utils.data import DataLoader, Dataset
 from ave_mm.splits import source_video_disjoint_split
 from ave_mm.dataset import AVEDataset
 from ave_mm.integrity import audit_manifest
+from multimodal.data_adapters.media import read_video_frames
 from multimodal.contribution.fcd import InfoNCEFCD
 from multimodal.contribution.signatures import estimate_reference_fcd, estimate_signatures
 from multimodal.grouping.profiles import cluster_profiles
@@ -199,6 +200,24 @@ def test_dataset_full_clip_ignores_invalid_annotation_but_event_policy_rejects_i
         event[0]
 
 
+def test_video_reader_resizes_decoded_frames(monkeypatch, tmp_path):
+    class Capture:
+        def __init__(self, path):
+            self.reads = 0
+        def isOpened(self): return True
+        def get(self, prop): return 2 if prop == 5 else 20
+        def set(self, *args): pass
+        def read(self):
+            self.reads += 1
+            return True, np.zeros((24, 32, 3), dtype=np.uint8)
+        def release(self): pass
+
+    monkeypatch.setattr("multimodal.data_adapters.media.cv2.VideoCapture", Capture)
+    frames = read_video_frames(tmp_path / "fixture.mp4", start=None, end=None,
+                               num_frames=2, image_size=12)
+    assert frames.shape == (2, 3, 12, 12)
+
+
 @pytest.mark.parametrize(("start", "end"), [("nan", "1"), ("", "1"), ("2", "1")])
 def test_annotated_event_rejects_nonfinite_missing_and_reversed_intervals(tmp_path, monkeypatch, start, end):
     audio = tmp_path / "a.wav"
@@ -366,7 +385,9 @@ def test_reference_to_joint_checkpoint_smoke(tmp_path):
               "test_dataset": {"name": "tiny", "adapter": "synthetic", "split_protocol": "synthetic", "factory": "tests.test_core:make_tiny_test_dataset", "kwargs": {}},
               "model": {"factory": "tests.test_core:make_tiny_model", "kwargs": {}},
               "training": {"batch_size": 2, "num_workers": 0, "epochs": 1,
-                           "learning_rate": .001, "weight_decay": 0.}, "contribution": {}}
+                           "learning_rate": .001, "weight_decay": 0.},
+              "contribution": {"fcd_factory": "multimodal.contribution.fcd:InfoNCEFCD",
+                               "fcd_kwargs": {"queue_size": 0}}}
     config_path.write_text(yaml.safe_dump(config))
     previous_argv = sys.argv
     try:

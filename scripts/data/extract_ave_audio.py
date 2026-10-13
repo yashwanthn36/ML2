@@ -1,5 +1,6 @@
 ﻿"""Extract full-length mono 16 kHz WAV tracks from AVE MP4 files."""
 from __future__ import annotations
+import argparse
 import json
 import shutil
 import subprocess
@@ -21,6 +22,7 @@ def find_ffmpeg() -> str:
         raise RuntimeError("Install ffmpeg or imageio-ffmpeg to extract audio") from exc
 
 def main() -> None:
+    argparse.ArgumentParser(description=__doc__).parse_args()
     if not VIDEO_DIR.is_dir():
         raise FileNotFoundError(f"AVE videos not found: {VIDEO_DIR}")
     videos = sorted(VIDEO_DIR.glob("*.mp4"))

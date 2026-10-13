@@ -39,7 +39,8 @@ def read_video_frames(path: str | Path, *, start: float | None, end: float | Non
             ok, frame = capture.read()
             if ok:
                 frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                last_good = cv2.resize(frame, (image_size, image_size), interpolation=cv2.INTER_AREA)
+                frame = cv2.resize(frame, (image_size, image_size), interpolation=cv2.INTER_AREA)
+                last_good = frame
             elif last_good is not None:
                 frame = last_good
             else:
