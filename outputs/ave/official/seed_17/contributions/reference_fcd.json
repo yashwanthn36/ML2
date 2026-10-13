@@ -1,0 +1,13 @@
+{
+  "distribution": [
+    0.5062769651412964,
+    0.4937230944633484
+  ],
+  "mean_information_lower_bound": [
+    -0.0008890076423995197,
+    -0.035558078438043594
+  ],
+  "sample_count": 669,
+  "negative_pool": "entire_estimation_subset",
+  "estimator": "InfoNCEFCD"
+}

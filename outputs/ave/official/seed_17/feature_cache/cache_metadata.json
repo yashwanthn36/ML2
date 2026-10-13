@@ -1,0 +1,21 @@
+{
+  "split_protocol": "official",
+  "device": "cuda",
+  "encoder_configs": {
+    "encoder_1": {
+      "name": "panns_cnn14",
+      "kwargs": {
+        "input_sample_rate": 16000,
+        "pretrained": true,
+        "freeze": true
+      }
+    },
+    "encoder_2": {
+      "name": "resnet18",
+      "kwargs": {
+        "pretrained": true,
+        "freeze": true
+      }
+    }
+  }
+}

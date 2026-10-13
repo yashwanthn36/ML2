@@ -1,0 +1,192 @@
+{
+  "checkpoint": "D:\\Projects\\ML Research\\outputs\\ave\\official\\seed_17\\reference_best.pt",
+  "signatures": "D:\\Projects\\ML Research\\outputs\\ave\\official\\seed_17\\contributions\\estimation_signatures.csv",
+  "reference_fcd": "D:\\Projects\\ML Research\\outputs\\ave\\official\\seed_17\\contributions\\reference_fcd.json",
+  "group_count": 28,
+  "ucd_scopes": {
+    "classes": 28,
+    "groups": 28
+  },
+  "fallbacks": [
+    {
+      "scope": "class:1",
+      "to": "global",
+      "reason": "unstable_bootstrap"
+    },
+    {
+      "scope": "group:1:0",
+      "to": "class:1",
+      "reason": "unstable_bootstrap"
+    },
+    {
+      "scope": "class:2",
+      "to": "global",
+      "reason": "insufficient_support"
+    },
+    {
+      "scope": "group:2:0",
+      "to": "class:2",
+      "reason": "insufficient_support"
+    },
+    {
+      "scope": "class:3",
+      "to": "global",
+      "reason": "unstable_bootstrap"
+    },
+    {
+      "scope": "group:3:0",
+      "to": "class:3",
+      "reason": "unstable_bootstrap"
+    },
+    {
+      "scope": "class:5",
+      "to": "global",
+      "reason": "insufficient_support"
+    },
+    {
+      "scope": "group:5:0",
+      "to": "class:5",
+      "reason": "insufficient_support"
+    },
+    {
+      "scope": "class:6",
+      "to": "global",
+      "reason": "insufficient_support"
+    },
+    {
+      "scope": "group:6:0",
+      "to": "class:6",
+      "reason": "insufficient_support"
+    },
+    {
+      "scope": "class:8",
+      "to": "global",
+      "reason": "unstable_bootstrap"
+    },
+    {
+      "scope": "group:8:0",
+      "to": "class:8",
+      "reason": "unstable_bootstrap"
+    },
+    {
+      "scope": "class:11",
+      "to": "global",
+      "reason": "unstable_bootstrap"
+    },
+    {
+      "scope": "group:11:0",
+      "to": "class:11",
+      "reason": "unstable_bootstrap"
+    },
+    {
+      "scope": "class:13",
+      "to": "global",
+      "reason": "unstable_bootstrap"
+    },
+    {
+      "scope": "group:13:0",
+      "to": "class:13",
+      "reason": "unstable_bootstrap"
+    },
+    {
+      "scope": "class:14",
+      "to": "global",
+      "reason": "insufficient_support"
+    },
+    {
+      "scope": "group:14:0",
+      "to": "class:14",
+      "reason": "insufficient_support"
+    },
+    {
+      "scope": "class:15",
+      "to": "global",
+      "reason": "unstable_bootstrap"
+    },
+    {
+      "scope": "group:15:0",
+      "to": "class:15",
+      "reason": "unstable_bootstrap"
+    },
+    {
+      "scope": "class:16",
+      "to": "global",
+      "reason": "insufficient_support"
+    },
+    {
+      "scope": "group:16:0",
+      "to": "class:16",
+      "reason": "insufficient_support"
+    },
+    {
+      "scope": "class:18",
+      "to": "global",
+      "reason": "unstable_bootstrap"
+    },
+    {
+      "scope": "group:18:0",
+      "to": "class:18",
+      "reason": "unstable_bootstrap"
+    },
+    {
+      "scope": "class:19",
+      "to": "global",
+      "reason": "insufficient_support"
+    },
+    {
+      "scope": "group:19:0",
+      "to": "class:19",
+      "reason": "insufficient_support"
+    },
+    {
+      "scope": "class:21",
+      "to": "global",
+      "reason": "unstable_bootstrap"
+    },
+    {
+      "scope": "group:21:0",
+      "to": "class:21",
+      "reason": "unstable_bootstrap"
+    },
+    {
+      "scope": "class:22",
+      "to": "global",
+      "reason": "insufficient_support"
+    },
+    {
+      "scope": "group:22:0",
+      "to": "class:22",
+      "reason": "insufficient_support"
+    },
+    {
+      "scope": "class:23",
+      "to": "global",
+      "reason": "unstable_bootstrap"
+    },
+    {
+      "scope": "group:23:0",
+      "to": "class:23",
+      "reason": "unstable_bootstrap"
+    },
+    {
+      "scope": "class:25",
+      "to": "global",
+      "reason": "insufficient_support"
+    },
+    {
+      "scope": "group:25:0",
+      "to": "class:25",
+      "reason": "insufficient_support"
+    },
+    {
+      "scope": "class:27",
+      "to": "global",
+      "reason": "unstable_bootstrap"
+    },
+    {
+      "scope": "group:27:0",
+      "to": "class:27",
+      "reason": "unstable_bootstrap"
+    }
+  ]
+}

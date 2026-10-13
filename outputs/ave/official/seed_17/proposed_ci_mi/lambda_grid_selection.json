@@ -1,0 +1,48 @@
+{
+  "model_condition": "proposed_ci_mi",
+  "seed": 17,
+  "split_protocol": "official",
+  "selection_metric": "validation_macro_f1",
+  "candidates": [
+    {
+      "model_condition": "proposed_ci_mi",
+      "lambda_mi": 0.01,
+      "checkpoint": "D:\\Projects\\ML Research\\outputs\\ave\\official\\seed_17\\proposed_ci_mi\\lambda_0.01\\joint_best.pt",
+      "selected_epoch": 6,
+      "selection_metric": "validation_macro_f1",
+      "validation_macro_f1": 0.918821605827577
+    },
+    {
+      "model_condition": "proposed_ci_mi",
+      "lambda_mi": 0.1,
+      "checkpoint": "D:\\Projects\\ML Research\\outputs\\ave\\official\\seed_17\\proposed_ci_mi\\lambda_0.1\\joint_best.pt",
+      "selected_epoch": 4,
+      "selection_metric": "validation_macro_f1",
+      "validation_macro_f1": 0.9330854779312702
+    },
+    {
+      "model_condition": "proposed_ci_mi",
+      "lambda_mi": 1.0,
+      "checkpoint": "D:\\Projects\\ML Research\\outputs\\ave\\official\\seed_17\\proposed_ci_mi\\lambda_1\\joint_best.pt",
+      "selected_epoch": 5,
+      "selection_metric": "validation_macro_f1",
+      "validation_macro_f1": 0.9175240806880282
+    },
+    {
+      "model_condition": "proposed_ci_mi",
+      "lambda_mi": 10.0,
+      "checkpoint": "D:\\Projects\\ML Research\\outputs\\ave\\official\\seed_17\\proposed_ci_mi\\lambda_10\\joint_best.pt",
+      "selected_epoch": 14,
+      "selection_metric": "validation_macro_f1",
+      "validation_macro_f1": 0.9263931022786721
+    }
+  ],
+  "selected": {
+    "model_condition": "proposed_ci_mi",
+    "lambda_mi": 0.1,
+    "checkpoint": "D:\\Projects\\ML Research\\outputs\\ave\\official\\seed_17\\proposed_ci_mi\\lambda_0.1\\joint_best.pt",
+    "selected_epoch": 4,
+    "selection_metric": "validation_macro_f1",
+    "validation_macro_f1": 0.9330854779312702
+  }
+}

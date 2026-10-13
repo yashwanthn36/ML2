@@ -1,0 +1,24 @@
+{
+  "model_condition": "ci_only",
+  "seed": 17,
+  "split_protocol": "official",
+  "selection_metric": "validation_macro_f1",
+  "candidates": [
+    {
+      "model_condition": "ci_only",
+      "lambda_mi": null,
+      "checkpoint": "D:\\Projects\\ML Research\\outputs\\ave\\official\\seed_17\\ci_only\\joint_best.pt",
+      "selected_epoch": 11,
+      "selection_metric": "validation_macro_f1",
+      "validation_macro_f1": 0.9226850295185817
+    }
+  ],
+  "selected": {
+    "model_condition": "ci_only",
+    "lambda_mi": null,
+    "checkpoint": "D:\\Projects\\ML Research\\outputs\\ave\\official\\seed_17\\ci_only\\joint_best.pt",
+    "selected_epoch": 11,
+    "selection_metric": "validation_macro_f1",
+    "validation_macro_f1": 0.9226850295185817
+  }
+}
