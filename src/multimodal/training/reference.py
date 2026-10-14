@@ -40,7 +40,8 @@ def sample_modality_mask(batch_size: int, probability: float, device: torch.devi
     return mask
 
 
-def evaluate(model: nn.Module, loader: DataLoader, device: torch.device) -> dict[str, Any]:
+def evaluate(model: nn.Module, loader: DataLoader, device: torch.device,
+             minority_class_ids: list[int] | None = None) -> dict[str, Any]:
     model.eval()
     targets: list[int] = []
     predictions: list[int] = []
@@ -60,12 +61,22 @@ def evaluate(model: nn.Module, loader: DataLoader, device: torch.device) -> dict
             predictions.extend(logits.argmax(dim=1).cpu().tolist())
     recalls = recall_score(targets, predictions, average=None, labels=list(range(num_classes)),
                            zero_division=0)
-    return {"loss": loss_sum / max(count, 1),
+    result = {"loss": loss_sum / max(count, 1),
             "macro_f1": float(f1_score(targets, predictions, average="macro", labels=list(range(num_classes)),
                                        zero_division=0)),
             "balanced_accuracy": float(recalls.mean()),
             "accuracy": float(accuracy_score(targets, predictions)),
             "per_class_recall": recalls.tolist()}
+    if minority_class_ids:
+        result["minority_macro_f1"] = float(f1_score(
+            targets, predictions, average="macro", labels=minority_class_ids, zero_division=0))
+        result["minority_macro_recall"] = float(recall_score(
+            targets, predictions, average=None, labels=minority_class_ids,
+            zero_division=0).mean())
+    else:
+        result["minority_macro_f1"] = None
+        result["minority_macro_recall"] = None
+    return result
 
 
 def train_reference(model: nn.Module, train_loader: DataLoader, validation_loader: DataLoader,
@@ -99,6 +110,12 @@ def train_reference(model: nn.Module, train_loader: DataLoader, validation_loade
     run_metadata["dataset_metadata"] = (data_metadata or {}).get("dataset_metadata", {})
     run_metadata["class_to_id"] = (data_metadata or {}).get("class_to_id", {})
     (run_dir / "experiment_metadata.json").write_text(json.dumps(run_metadata, indent=2), encoding="utf-8")
+    class_counts = (data_metadata or {}).get("training_class_counts", [])
+    minority_class_ids = []
+    if class_counts:
+        quantile = float(config.get("evaluation", {}).get("minority_bottom_quantile", 0.25))
+        threshold = float(np.quantile(class_counts, quantile))
+        minority_class_ids = [index for index, value in enumerate(class_counts) if value <= threshold]
     try:
         for epoch in range(1, int(training["epochs"]) + 1):
             model.train()
@@ -117,7 +134,8 @@ def train_reference(model: nn.Module, train_loader: DataLoader, validation_loade
                 optimizer.step()
                 loss_sum += float(loss.detach()) * labels.numel()
                 count += labels.numel()
-            metrics = evaluate(model, validation_loader, device)
+            metrics = evaluate(model, validation_loader, device,
+                               minority_class_ids=minority_class_ids)
             record = {"epoch": epoch, "seed": seed, "split_protocol": protocol, "device": str(device),
                       "model_condition": "reference", "training_objective": "natural_cross_entropy",
                       "lambda_mi": None, "checkpoint_selection_metric": "val_macro_f1",

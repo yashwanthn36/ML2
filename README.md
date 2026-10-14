@@ -1,4 +1,4 @@
-# Contribution-profile-aware multimodal learning
+﻿# Contribution-profile-aware multimodal learning
 
 This repository contains a reusable two-modality learning pipeline and an AVE adapter. It implements contribution signatures, contribution-profile grouping, risk-based UCD targets, Utopia-style mutual-information FCD estimates, class/group-balanced losses, and fixed-weight or minimum-norm two-objective training. The architecture reference is `references/contribution_profile_multimodal_architecture_redesigned.pdf`; the FCD equations are checked against `references/1-s2.0-S1566253525004567-main.pdf`.
 
@@ -20,17 +20,15 @@ The AVE media and archive are excluded from Git because they require several gig
 
 ```powershell
 .\.venv\Scripts\python.exe scripts/data/prepare_ave_manifest.py
-.\.venv\Scripts\python.exe scripts/data/prepare_ave_manifest.py --include-source-video-disjoint --seed 17
 .\.venv\Scripts\python.exe scripts/data/extract_ave_audio.py
 ```
 
-The disjoint command writes `ave_manifest_source_video_disjoint.csv` and `ave_source_video_disjoint_summary.json`. It reads ZIP metadata, not the media payloads.
 
 ## Dataset and split protocols
 
 `official` preserves the published AVE train/validation/test assignments, including their observed overlap in source-video IDs. Use it as a named benchmark baseline; do not describe its test result as source-video-independent.
 
-`source_video_disjoint` uses deterministic nested `StratifiedGroupKFold` (seed 17 by default). Segments sharing a video ID always stay in one partition. Its summary reports class counts, missing classes, and pairwise source-ID intersections. Source separation takes priority when a class cannot be represented in every partition. Select the protocol in both `dataset.split_protocol` and `test_dataset.split_protocol` in the YAML config. The AVE reader also accepts `temporal_window_policy: full_clip` or `annotated_event` and `min_audio_coverage`.
+The active AVE experiment uses the published `official` assignments. Shared utilities can audit source IDs, but no source-video-disjoint experiment is part of the active workflow. The AVE reader also accepts `temporal_window_policy: full_clip` or `annotated_event` and `min_audio_coverage`.
 
 The configured AVE policy is `full_clip`: audio and video are sampled over the available clip, with 16 kHz mono 16-bit PCM, fixed waveform length, RGB frames, and encoder-side image normalization. The `annotated_event` option synchronously crops both streams to the annotation interval. Short/empty intervals fail with a descriptive error when valid audio would fall below the configured coverage threshold; padding cannot silently dominate. The AVE adapter supplies tensor inputs, while PANNs and ResNet adapters perform their own required preprocessing.
 
@@ -53,11 +51,13 @@ Negative deltas are retained. They are used as two-dimensional within-class prof
 
 The UCD target is risk-based: mean positive signed risk increments are normalized, with an epsilon for finite probabilities. Class and class/group targets fall back to their parent scope when support is low or bootstrap stability exceeds the configured threshold. Uncertainty uses a source-video cluster bootstrap when source IDs exist (sample IDs otherwise). Its output is labelled bootstrap spread/quantiles, not calibrated confidence intervals.
 
-FCD is a separate MI estimate; it is not computed from signed loss signatures. The local Utopia paper defines an InfoNCE lower bound in Eqs. (7)–(9): L2-normalized modality and fused features, a positive paired score, a log candidate-count term, and a log-sum-exp over positive and negative candidates. `InfoNCEFCD.per_sample_information` returns signed lower bounds `[anchors, 2]`. Negatives are other current-batch examples plus a detached FIFO bank of previous training examples; matching sample IDs are excluded, and AVE sets `exclude_same_source_negatives: true` to exclude sibling source-video segments from current and queued negatives. Sample IDs and source IDs are stored in queue entries. Datasets without source IDs fall back to sample-ID exclusion. Insufficient candidate pools raise an actionable error. This configurable negative-sampling policy is an AVE experiment choice, not an exact reproduction of Utopia. Consequently batch composition and queue contents affect the estimate; batch size 4 alone is a weak contrastive pool, which is why training uses a configurable queue (1024 by default). The reference estimate uses the entire independent estimation subset as its candidate pool. Validation/test estimates do not update a queue.
+FCD is a separate MI estimate; it is not computed from signed loss signatures. The local Utopia paper defines an InfoNCE lower bound in Eqs. (7)â€“(9): L2-normalized modality and fused features, a positive paired score, a log candidate-count term, and a log-sum-exp over positive and negative candidates. `InfoNCEFCD.per_sample_information` returns signed lower bounds `[anchors, 2]`. Negatives are other current-batch examples plus a detached FIFO bank of previous training examples; matching sample IDs are excluded, and AVE sets `exclude_same_source_negatives: true` to exclude sibling source-video segments from current and queued negatives. Sample IDs and source IDs are stored in queue entries. Datasets without source IDs fall back to sample-ID exclusion. Insufficient candidate pools raise an actionable error. This configurable negative-sampling policy is an AVE experiment choice, not an exact reproduction of Utopia. Consequently batch composition and queue contents affect the estimate; batch size 4 alone is a weak contrastive pool, which is why training uses a configurable queue (1024 by default). The reference estimate uses the entire independent estimation subset as its candidate pool. Validation/test estimates do not update a queue.
 
 The paper normalizes MI estimates to get FCD but does not specify how to turn a negative finite-sample InfoNCE bound into a probability. This implementation applies Softplus to the mean bound within each optimization scope, adds epsilon, and normalizes the two modality values. Softplus is an explicit adaptation, not an exact reproduction of Utopia. The result is a finite nonnegative distribution summing to one, and its gradients flow through current representations; queued negatives are detached. Scope-level distributions are computed separately for the selected global, class, or class/group scope. UCD-to-FCD KL uses target UCD as its first argument.
 
 Class-balanced CE uses full-training inverse class frequencies with an N/B scale; under natural uniform minibatch sampling, its mean is an unbiased estimator of equal class risk. Hierarchical group-balanced CE uses full-training class/group counts with the corresponding N/B scale to estimate equal class weighting followed by equal group weighting within each class. It does not self-normalize weights over the current batch, which would make the effective objective composition dependent. Fallback behavior without full counts averages the scopes present in the batch and is marked as an approximation. MOO computes both objective gradients over the same trainable parameter list, handles unused gradients, combines them with the minimum-norm convex coefficient, then assigns gradients and steps once. Diagnostics log gradient norms and cosine similarity.
+
+The optional `normalized_moo` mode normalizes each objective gradient to unit norm before the same convex combination. This is a scale-normalized sensitivity analysis, not the raw minimum-norm method in the paper. The AVE seed-23 comparison is documented in `results/summary.md` and `docs/method_notes.md`.
 
 ## Training-only data protocol
 
@@ -67,7 +67,7 @@ An explicit all-training in-sample fallback is available only if the config sets
 
 ## AVE protocol configurations and full comparison workflow
 
-Use `configs/ave_official.yaml` for the published AVE assignments and `configs/ave_source_video_disjoint.yaml` for deterministic source-video-disjoint assignments (seed 17). Both configure matching training/test protocols and independent output roots: `outputs/ave/official/` and `outputs/ave/source_video_disjoint/`. `configs/ave_reference.yaml` remains a backward-compatible alias for the official setup. Run one protocol's complete block at a time.
+Use `configs/ave_official.yaml` for the published AVE assignments. Its official split has known source-video ID overlap, so results must not be described as source-video-independent. `configs/ave_reference.yaml` remains a backward-compatible alias for the official setup.
 
 The reference model uses the configured natural-sampling classification objective. The CI-only baseline initializes from the exact same reference checkpoint, uses class-balanced CE, and does not construct or call an FCD estimator. The proposed CI + MI condition also initializes from that reference checkpoint, uses the same CI objective and budget, and adds the existing contribution-alignment loss. Its positive lambda grid is selected using validation macro-F1 only. CI-only and proposed checkpoints/logs are distinct and explicitly tagged; test scores do not select checkpoints or lambda.
 
@@ -88,24 +88,8 @@ python scripts/training/evaluate_test.py --config $cfg --checkpoint $proposedChe
 python scripts/analysis/plot_results.py --protocol official --seed 17 --targets "$root/contributions/ucd_targets.json" --result "reference=$root/evaluations/reference/test_metrics.json" --result "ci_only=$root/evaluations/ci_only/test_metrics.json" --result "proposed_ci_mi=$root/evaluations/proposed_ci_mi/test_metrics.json"
 ```
 
-### Source-video-disjoint protocol
 
-```powershell
-$cfg = "configs/ave_source_video_disjoint.yaml"
-$root = "outputs/ave/source_video_disjoint/seed_17"
-python scripts/training/train_reference.py --config $cfg
-python scripts/training/estimate_contributions.py --config $cfg --checkpoint "$root/reference_best.pt"
-python scripts/training/train_joint.py --config $cfg --condition ci_only --reference-checkpoint "$root/reference_best.pt"
-python scripts/training/train_joint.py --config $cfg --condition proposed_ci_mi --reference-checkpoint "$root/reference_best.pt" --targets "$root/contributions/ucd_targets.json" --groups "$root/contributions/profile_groups.json"
-$selection = Get-Content "$root/proposed_ci_mi/lambda_grid_selection.json" -Raw | ConvertFrom-Json
-$proposedCheckpoint = $selection.selected.checkpoint
-python scripts/training/evaluate_test.py --config $cfg --checkpoint "$root/reference_best.pt" --output-dir "$root/evaluations/reference"
-python scripts/training/evaluate_test.py --config $cfg --checkpoint "$root/ci_only/joint_best.pt" --output-dir "$root/evaluations/ci_only"
-python scripts/training/evaluate_test.py --config $cfg --checkpoint $proposedCheckpoint --targets "$root/contributions/ucd_targets.json" --output-dir "$root/evaluations/proposed_ci_mi"
-python scripts/analysis/plot_results.py --protocol source_video_disjoint --seed 17 --targets "$root/contributions/ucd_targets.json" --result "reference=$root/evaluations/reference/test_metrics.json" --result "ci_only=$root/evaluations/ci_only/test_metrics.json" --result "proposed_ci_mi=$root/evaluations/proposed_ci_mi/test_metrics.json"
-```
-
-Each evaluation writes a separate `test_metrics.json` and `test_predictions.csv`, so the three conditions do not overwrite one another. The selected proposed checkpoint path comes from validation-only `lambda_grid_selection.json`. Provenance checks enforce protocol, seed, reference checkpoint, and training IDs. Legacy artifacts need the explicit `--allow-legacy-artifacts` option. Official AVE has source-video overlap and is not source-video-independent; the disjoint protocol has no source-video overlap for the committed seed.
+Legacy artifacts need the explicit `--allow-legacy-artifacts` option. Official AVE has known source-video overlap and must not be described as source-video-independent.
 
 ## Test metrics and minority classes
 
@@ -116,6 +100,8 @@ Minority classes come only from training-set class counts, never test performanc
 `test_predictions.csv` contains IDs, true class IDs/names, hard predictions, and a probability column for every class under audio-video, audio-only, and video-only conditions. Probabilities are checked for finite values, range, and row sum; hard predictions are their argmax and the modality conditions use the model's trained missing-modality path.
 
 ## Results reports and figures
+
+The curated, aggregate AVE report is built from completed run artifacts by `scripts/analysis/report_experiments.py`. It writes `results/summary.md`, machine-readable tables under `results/tables/`, and primary figures under `results/figures/`; detailed metrics and predictions remain in their run directories. The current report includes matched five-seed natural, IF=10, and IF=20 comparisons and clearly identifies the official split's source-video overlap.
 
 After all three evaluations finish, `scripts/analysis/plot_results.py` requires actual metric and prediction files for reference, CI-only, and proposed models. It rejects missing files, class-map or training-count differences, wrong protocols, duplicate seeds, and results with different seed sets. It never makes up performance values. For several completed seeds, pass repeated `--result MODEL=METRICS_JSON` values for each model/seed and omit `--seed`; the summary uses means and sample standard deviations. For one seed it explicitly labels the report single-seed. Use `--targets SEED=PATH` per seed for a multi-seed contribution diagnostic, or let the script discover each seed's compatible target artifact.
 
@@ -137,7 +123,6 @@ Reports are saved under `outputs/ave/<protocol>/seed_<seed>/reports/figures/` (o
 
 ## AVE annotation integrity and FCD sampling
 
-Run `python scripts/data/prepare_ave_manifest.py --include-source-video-disjoint --seed 17` to regenerate manifests and JSON integrity reports. The audit reports exact duplicate rows, repeated source/label/interval combinations, source-level label conflicts, overlapping/identical event intervals, invalid/missing annotations, split source overlap, and summary consistency with sample IDs and annotation fields. Rows are retained; exact duplicates remain eligible for training. Distinct non-overlapping segments are not deduplicated. The committed audit found no exact duplicate rows, 45 cross-label source conflicts, 47 overlapping/identical interval pairs, and one zero-length interval. Conflicts are reported rather than silently relabeled.
 
 The AVE configs set `contribution.fcd_kwargs.exclude_same_source_negatives: true`: other same-video segments are excluded from current/queued negatives while the paired positive remains. Datasets without source IDs fall back to sample-ID exclusion. This is an experimental negative-sampling policy, not an exact reproduction of Utopia. FCD also uses the documented Softplus adaptation for negative InfoNCE lower bounds.
 

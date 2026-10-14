@@ -79,6 +79,7 @@ def cluster_profiles(signatures_csv: str | Path, output_json: str | Path, *,
         }
         diagnostics[class_key] = {"class_count": count, "min_support": required,
                                   "groups": chosen, "silhouette": best_score, "decision": reason}
+    assignment_fallbacks: dict[str, str] = {}
     if assignment_signatures_csv is not None:
         with Path(assignment_signatures_csv).open("r", newline="", encoding="utf-8") as handle:
             assignment_rows = list(csv.DictReader(handle))
@@ -95,7 +96,13 @@ def cluster_profiles(signatures_csv: str | Path, output_json: str | Path, *,
                 continue
             class_id = int(row["label"])
             if class_id not in class_centroids:
-                raise ValueError(f"No fitted contribution profile for class {class_id}")
+                # A training-only estimation subset can omit very rare classes,
+                # especially after deterministic long-tail downsampling. Do not
+                # fit their profile from reference-fit examples: assign the
+                # single fallback group and let UCD use its parent/global target.
+                groups[sample_id] = 0
+                assignment_fallbacks[str(class_id)] = "no_estimation_support_global_target_fallback"
+                continue
             signature = np.asarray([float(row["delta_1"]), float(row["delta_2"])])
             if not np.isfinite(signature).all():
                 raise ValueError(f"Non-finite contribution signature for sample {sample_id!r}")
@@ -110,6 +117,7 @@ def cluster_profiles(signatures_csv: str | Path, output_json: str | Path, *,
         missing = sorted(set(assignment_ids) - set(groups))
         raise ValueError(f"No contribution group assignment for {len(missing)} samples: {missing[:5]}")
     result = {"assignments": groups, "group_statistics": stats, "diagnostics": diagnostics,
+              "assignment_fallbacks": assignment_fallbacks,
               "fit_sample_ids": ids, "fit_source_ids": fit_source_ids,
               "assignment_sample_ids": assignment_ids,
               "assignment_source_ids": assignment_source_ids,

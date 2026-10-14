@@ -32,6 +32,13 @@ def min_norm_combine(grad_ci, grad_mi, *, epsilon: float = 1e-12):
     return alpha, combined
 
 
+def normalize_gradients(gradients, *, epsilon: float = 1e-12):
+    """Scale an objective's full gradient vector to unit norm for sensitivity studies."""
+    norm = _dot(gradients, gradients).sqrt()
+    scale = max(float(norm.detach()), epsilon)
+    return tuple(None if gradient is None else gradient / scale for gradient in gradients)
+
+
 def gradient_diagnostics(grad_ci, grad_mi, *, epsilon: float = 1e-12) -> dict[str, float]:
     dot = _dot(grad_ci, grad_mi)
     norm_ci = _dot(grad_ci, grad_ci).sqrt()

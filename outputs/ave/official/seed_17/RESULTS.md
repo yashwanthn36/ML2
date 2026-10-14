@@ -1,4 +1,4 @@
-# AVE Results — Official Split, Seed 17
+﻿# AVE Results â€” Official Split, Seed 17
 
 This page summarizes the completed official-split test evaluations. Each model was evaluated on the same **401 test examples**. The main audio-video result is macro-F1, which gives each AVE class equal weight.
 
@@ -30,6 +30,7 @@ On this seed and split, the proposed model did not improve overall macro-F1 over
 
 ## Scope and report status
 
-These are results for the **official split**, not the source-video-disjoint protocol. The source-video-disjoint run was paused before training; its partial feature cache was retained.
+These are results for the **official split**, which has known source-video ID overlap and is not source-video-independent. The separate source-video-disjoint workflow was removed from the active experiment setup.
 
 The automated report has since been generated. Its summary tables are in `reports/summary_metrics.md` and `reports/summary_metrics.csv`; per-class results are in `reports/per_class_metrics.csv`; figures are in `reports/figures/` as PNG and PDF files. The report uses the AVE manifest for split class counts and the cached training index for run-provenance validation.
+

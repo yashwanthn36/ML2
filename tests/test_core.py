@@ -19,7 +19,7 @@ from multimodal.contribution.fcd import InfoNCEFCD
 from multimodal.contribution.signatures import estimate_reference_fcd, estimate_signatures
 from multimodal.grouping.profiles import cluster_profiles
 from multimodal.losses.balanced import class_balanced_ce, group_balanced_ce
-from multimodal.optim.moo import min_norm_combine, moo_optimizer_step
+from multimodal.optim.moo import min_norm_combine, moo_optimizer_step, normalize_gradients
 from multimodal.models.fusion import TwoModalityFusion
 from multimodal.training.splits import grouped_reference_holdout
 from multimodal.contribution.targets import build_ucd_targets
@@ -127,6 +127,22 @@ def test_group_fit_assignment_coverage_and_signed_values(tmp_path):
     assert result["assignment_sample_ids"] == [r["sample_id"] for r in rows]
 
 
+def test_group_assignment_falls_back_for_class_absent_from_estimation(tmp_path):
+    fitted, assigned = tmp_path / "fit.csv", tmp_path / "assign.csv"
+    headers = ["sample_id", "source_id", "label", "delta_1", "delta_2"]
+    rows = [{"sample_id": f"s{i}", "source_id": f"v{i}", "label": "0",
+             "delta_1": str(i * .1), "delta_2": str(-i * .05)} for i in range(4)]
+    rare = {"sample_id": "rare", "source_id": "rare-video", "label": "5",
+            "delta_1": "-0.2", "delta_2": "0.3"}
+    for path, subset in ((fitted, rows), (assigned, rows + [rare])):
+        with path.open("w", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=headers); w.writeheader(); w.writerows(subset)
+    result = cluster_profiles(fitted, tmp_path / "groups.json", min_support_floor=2,
+                              assignment_signatures_csv=assigned)
+    assert result["assignments"]["rare"] == 0
+    assert result["assignment_fallbacks"] == {"5": "no_estimation_support_global_target_fallback"}
+
+
 def test_hierarchical_losses_exact_present_scope_means():
     logits = torch.tensor([[2., 0.], [0., 2.], [0., 0.]])
     labels = torch.tensor([0, 1, 1])
@@ -145,6 +161,12 @@ def test_moo_conflicting_degenerate_and_optimizer_update():
     assert combined[0].item() == pytest.approx(0.)
     alpha, combined = min_norm_combine((torch.zeros(1),), (torch.zeros(1),))
     assert torch.isfinite(alpha) and torch.isfinite(combined[0]).all()
+    large = (torch.tensor([100.0, 0.0]),)
+    small = (torch.tensor([0.0, 0.01]),)
+    raw_alpha, _ = min_norm_combine(large, small)
+    normalized_alpha, _ = min_norm_combine(normalize_gradients(large), normalize_gradients(small))
+    assert raw_alpha.item() < 1e-5
+    assert normalized_alpha.item() == pytest.approx(0.5)
     parameter = nn.Parameter(torch.tensor([1.]))
     model = nn.Linear(1, 1, bias=False)
     with torch.no_grad(): model.weight.fill_(1.)

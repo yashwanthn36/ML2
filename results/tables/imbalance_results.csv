@@ -1,0 +1,393 @@
+condition,seed,class_id,class_name,natural_count,retained_count,imbalance_factor_requested,imbalance_factor_achieved,subset_manifest
+natural,123,0,Accordion,124,124,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,1,Acoustic guitar,150,150,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,2,"Baby cry, infant cry",67,67,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,3,Banjo,147,147,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,4,Bark,137,137,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,5,Bus,57,57,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,6,Cat,48,48,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,7,Chainsaw,128,128,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,8,Church bell,151,151,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,9,Clock,128,128,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,10,"Female speech, woman speaking",141,141,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,11,"Fixed-wing aircraft, airplane",148,148,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,12,Flute,138,138,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,13,Frying (food),146,146,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,14,Goat,80,80,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,15,Helicopter,144,144,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,16,Horse,52,52,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,17,"Male speech, man speaking",142,142,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,18,Mandolin,126,126,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,19,Motorcycle,81,81,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,20,"Race car, auto racing",152,152,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,21,"Rodents, rats, mice",89,89,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,22,Shofar,82,82,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,23,Toilet flush,144,144,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,24,Train horn,142,142,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,25,Truck,112,112,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,26,Ukulele,131,131,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,123,27,"Violin, fiddle",151,151,,3.1666666666666665,outputs/ave/natural/seed_123/dataset/train_subset_manifest.csv
+natural,23,0,Accordion,124,124,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,1,Acoustic guitar,150,150,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,2,"Baby cry, infant cry",67,67,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,3,Banjo,147,147,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,4,Bark,137,137,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,5,Bus,57,57,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,6,Cat,48,48,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,7,Chainsaw,128,128,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,8,Church bell,151,151,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,9,Clock,128,128,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,10,"Female speech, woman speaking",141,141,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,11,"Fixed-wing aircraft, airplane",148,148,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,12,Flute,138,138,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,13,Frying (food),146,146,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,14,Goat,80,80,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,15,Helicopter,144,144,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,16,Horse,52,52,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,17,"Male speech, man speaking",142,142,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,18,Mandolin,126,126,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,19,Motorcycle,81,81,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,20,"Race car, auto racing",152,152,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,21,"Rodents, rats, mice",89,89,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,22,Shofar,82,82,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,23,Toilet flush,144,144,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,24,Train horn,142,142,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,25,Truck,112,112,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,26,Ukulele,131,131,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,23,27,"Violin, fiddle",151,151,,3.1666666666666665,outputs/ave/natural/seed_23/dataset/train_subset_manifest.csv
+natural,42,0,Accordion,124,124,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,1,Acoustic guitar,150,150,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,2,"Baby cry, infant cry",67,67,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,3,Banjo,147,147,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,4,Bark,137,137,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,5,Bus,57,57,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,6,Cat,48,48,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,7,Chainsaw,128,128,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,8,Church bell,151,151,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,9,Clock,128,128,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,10,"Female speech, woman speaking",141,141,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,11,"Fixed-wing aircraft, airplane",148,148,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,12,Flute,138,138,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,13,Frying (food),146,146,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,14,Goat,80,80,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,15,Helicopter,144,144,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,16,Horse,52,52,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,17,"Male speech, man speaking",142,142,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,18,Mandolin,126,126,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,19,Motorcycle,81,81,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,20,"Race car, auto racing",152,152,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,21,"Rodents, rats, mice",89,89,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,22,Shofar,82,82,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,23,Toilet flush,144,144,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,24,Train horn,142,142,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,25,Truck,112,112,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,26,Ukulele,131,131,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,42,27,"Violin, fiddle",151,151,,3.1666666666666665,outputs/ave/natural/seed_42/dataset/train_subset_manifest.csv
+natural,73,0,Accordion,124,124,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,1,Acoustic guitar,150,150,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,2,"Baby cry, infant cry",67,67,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,3,Banjo,147,147,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,4,Bark,137,137,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,5,Bus,57,57,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,6,Cat,48,48,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,7,Chainsaw,128,128,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,8,Church bell,151,151,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,9,Clock,128,128,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,10,"Female speech, woman speaking",141,141,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,11,"Fixed-wing aircraft, airplane",148,148,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,12,Flute,138,138,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,13,Frying (food),146,146,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,14,Goat,80,80,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,15,Helicopter,144,144,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,16,Horse,52,52,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,17,"Male speech, man speaking",142,142,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,18,Mandolin,126,126,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,19,Motorcycle,81,81,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,20,"Race car, auto racing",152,152,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,21,"Rodents, rats, mice",89,89,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,22,Shofar,82,82,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,23,Toilet flush,144,144,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,24,Train horn,142,142,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,25,Truck,112,112,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,26,Ukulele,131,131,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+natural,73,27,"Violin, fiddle",151,151,,3.1666666666666665,outputs/ave/natural/seed_73/dataset/train_subset_manifest.csv
+if10,123,0,Accordion,124,32,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,1,Acoustic guitar,150,116,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,2,"Baby cry, infant cry",67,19,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,3,Banjo,147,98,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,4,Bark,137,50,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,5,Bus,57,18,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,6,Cat,48,15,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,7,Chainsaw,128,42,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,8,Church bell,151,138,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,9,Clock,128,38,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,10,"Female speech, woman speaking",141,59,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,11,"Fixed-wing aircraft, airplane",148,107,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,12,Flute,138,54,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,13,Frying (food),146,90,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,14,Goat,80,21,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,15,Helicopter,144,83,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,16,Horse,52,16,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,17,"Male speech, man speaking",142,70,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,18,Mandolin,126,35,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,19,Motorcycle,81,23,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,20,"Race car, auto racing",152,150,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,21,"Rodents, rats, mice",89,27,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,22,Shofar,82,25,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,23,Toilet flush,144,76,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,24,Train horn,142,64,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,25,Truck,112,30,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,26,Ukulele,131,45,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,123,27,"Violin, fiddle",151,126,10,10.0,outputs/ave/if10/seed_123/dataset/train_subset_manifest.csv
+if10,17,0,Accordion,124,32,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,1,Acoustic guitar,150,116,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,2,"Baby cry, infant cry",67,19,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,3,Banjo,147,98,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,4,Bark,137,50,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,5,Bus,57,18,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,6,Cat,48,15,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,7,Chainsaw,128,42,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,8,Church bell,151,138,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,9,Clock,128,38,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,10,"Female speech, woman speaking",141,59,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,11,"Fixed-wing aircraft, airplane",148,107,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,12,Flute,138,54,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,13,Frying (food),146,90,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,14,Goat,80,21,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,15,Helicopter,144,83,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,16,Horse,52,16,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,17,"Male speech, man speaking",142,70,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,18,Mandolin,126,35,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,19,Motorcycle,81,23,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,20,"Race car, auto racing",152,150,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,21,"Rodents, rats, mice",89,27,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,22,Shofar,82,25,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,23,Toilet flush,144,76,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,24,Train horn,142,64,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,25,Truck,112,30,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,26,Ukulele,131,45,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,17,27,"Violin, fiddle",151,126,10,10.0,outputs/ave/if10/seed_17/dataset/train_subset_manifest.csv
+if10,23,0,Accordion,124,32,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,1,Acoustic guitar,150,116,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,2,"Baby cry, infant cry",67,19,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,3,Banjo,147,98,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,4,Bark,137,50,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,5,Bus,57,18,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,6,Cat,48,15,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,7,Chainsaw,128,42,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,8,Church bell,151,138,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,9,Clock,128,38,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,10,"Female speech, woman speaking",141,59,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,11,"Fixed-wing aircraft, airplane",148,107,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,12,Flute,138,54,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,13,Frying (food),146,90,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,14,Goat,80,21,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,15,Helicopter,144,83,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,16,Horse,52,16,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,17,"Male speech, man speaking",142,70,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,18,Mandolin,126,35,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,19,Motorcycle,81,23,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,20,"Race car, auto racing",152,150,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,21,"Rodents, rats, mice",89,27,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,22,Shofar,82,25,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,23,Toilet flush,144,76,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,24,Train horn,142,64,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,25,Truck,112,30,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,26,Ukulele,131,45,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,23,27,"Violin, fiddle",151,126,10,10.0,outputs/ave/if10/seed_23/dataset/train_subset_manifest.csv
+if10,42,0,Accordion,124,32,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,1,Acoustic guitar,150,116,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,2,"Baby cry, infant cry",67,19,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,3,Banjo,147,98,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,4,Bark,137,50,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,5,Bus,57,18,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,6,Cat,48,15,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,7,Chainsaw,128,42,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,8,Church bell,151,138,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,9,Clock,128,38,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,10,"Female speech, woman speaking",141,59,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,11,"Fixed-wing aircraft, airplane",148,107,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,12,Flute,138,54,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,13,Frying (food),146,90,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,14,Goat,80,21,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,15,Helicopter,144,83,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,16,Horse,52,16,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,17,"Male speech, man speaking",142,70,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,18,Mandolin,126,35,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,19,Motorcycle,81,23,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,20,"Race car, auto racing",152,150,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,21,"Rodents, rats, mice",89,27,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,22,Shofar,82,25,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,23,Toilet flush,144,76,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,24,Train horn,142,64,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,25,Truck,112,30,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,26,Ukulele,131,45,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,42,27,"Violin, fiddle",151,126,10,10.0,outputs/ave/if10/seed_42/dataset/train_subset_manifest.csv
+if10,73,0,Accordion,124,32,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,1,Acoustic guitar,150,116,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,2,"Baby cry, infant cry",67,19,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,3,Banjo,147,98,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,4,Bark,137,50,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,5,Bus,57,18,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,6,Cat,48,15,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,7,Chainsaw,128,42,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,8,Church bell,151,138,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,9,Clock,128,38,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,10,"Female speech, woman speaking",141,59,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,11,"Fixed-wing aircraft, airplane",148,107,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,12,Flute,138,54,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,13,Frying (food),146,90,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,14,Goat,80,21,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,15,Helicopter,144,83,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,16,Horse,52,16,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,17,"Male speech, man speaking",142,70,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,18,Mandolin,126,35,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,19,Motorcycle,81,23,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,20,"Race car, auto racing",152,150,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,21,"Rodents, rats, mice",89,27,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,22,Shofar,82,25,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,23,Toilet flush,144,76,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,24,Train horn,142,64,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,25,Truck,112,30,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,26,Ukulele,131,45,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if10,73,27,"Violin, fiddle",151,126,10,10.0,outputs/ave/if10/seed_73/dataset/train_subset_manifest.csv
+if20,123,0,Accordion,124,19,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,1,Acoustic guitar,150,100,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,2,"Baby cry, infant cry",67,10,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,3,Banjo,147,80,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,4,Bark,137,33,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,5,Bus,57,9,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,6,Cat,48,7,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,7,Chainsaw,128,27,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,8,Church bell,151,125,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,9,Clock,128,24,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,10,"Female speech, woman speaking",141,41,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,11,"Fixed-wing aircraft, airplane",148,90,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,12,Flute,138,37,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,13,Frying (food),146,72,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,14,Goat,80,11,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,15,Helicopter,144,64,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,16,Horse,52,8,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,17,"Male speech, man speaking",142,52,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,18,Mandolin,126,21,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,19,Motorcycle,81,12,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,20,"Race car, auto racing",152,140,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,21,"Rodents, rats, mice",89,15,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,22,Shofar,82,14,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,23,Toilet flush,144,58,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,24,Train horn,142,46,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,25,Truck,112,17,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,26,Ukulele,131,30,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,123,27,"Violin, fiddle",151,112,20,20.0,outputs/ave/if20/seed_123/dataset/train_subset_manifest.csv
+if20,17,0,Accordion,124,19,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,1,Acoustic guitar,150,100,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,2,"Baby cry, infant cry",67,10,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,3,Banjo,147,80,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,4,Bark,137,33,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,5,Bus,57,9,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,6,Cat,48,7,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,7,Chainsaw,128,27,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,8,Church bell,151,125,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,9,Clock,128,24,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,10,"Female speech, woman speaking",141,41,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,11,"Fixed-wing aircraft, airplane",148,90,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,12,Flute,138,37,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,13,Frying (food),146,72,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,14,Goat,80,11,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,15,Helicopter,144,64,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,16,Horse,52,8,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,17,"Male speech, man speaking",142,52,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,18,Mandolin,126,21,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,19,Motorcycle,81,12,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,20,"Race car, auto racing",152,140,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,21,"Rodents, rats, mice",89,15,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,22,Shofar,82,14,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,23,Toilet flush,144,58,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,24,Train horn,142,46,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,25,Truck,112,17,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,26,Ukulele,131,30,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,17,27,"Violin, fiddle",151,112,20,20.0,outputs/ave/if20/seed_17/dataset/train_subset_manifest.csv
+if20,23,0,Accordion,124,19,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,1,Acoustic guitar,150,100,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,2,"Baby cry, infant cry",67,10,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,3,Banjo,147,80,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,4,Bark,137,33,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,5,Bus,57,9,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,6,Cat,48,7,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,7,Chainsaw,128,27,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,8,Church bell,151,125,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,9,Clock,128,24,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,10,"Female speech, woman speaking",141,41,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,11,"Fixed-wing aircraft, airplane",148,90,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,12,Flute,138,37,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,13,Frying (food),146,72,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,14,Goat,80,11,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,15,Helicopter,144,64,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,16,Horse,52,8,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,17,"Male speech, man speaking",142,52,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,18,Mandolin,126,21,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,19,Motorcycle,81,12,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,20,"Race car, auto racing",152,140,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,21,"Rodents, rats, mice",89,15,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,22,Shofar,82,14,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,23,Toilet flush,144,58,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,24,Train horn,142,46,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,25,Truck,112,17,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,26,Ukulele,131,30,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,23,27,"Violin, fiddle",151,112,20,20.0,outputs/ave/if20/seed_23/dataset/train_subset_manifest.csv
+if20,42,0,Accordion,124,19,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,1,Acoustic guitar,150,100,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,2,"Baby cry, infant cry",67,10,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,3,Banjo,147,80,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,4,Bark,137,33,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,5,Bus,57,9,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,6,Cat,48,7,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,7,Chainsaw,128,27,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,8,Church bell,151,125,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,9,Clock,128,24,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,10,"Female speech, woman speaking",141,41,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,11,"Fixed-wing aircraft, airplane",148,90,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,12,Flute,138,37,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,13,Frying (food),146,72,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,14,Goat,80,11,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,15,Helicopter,144,64,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,16,Horse,52,8,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,17,"Male speech, man speaking",142,52,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,18,Mandolin,126,21,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,19,Motorcycle,81,12,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,20,"Race car, auto racing",152,140,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,21,"Rodents, rats, mice",89,15,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,22,Shofar,82,14,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,23,Toilet flush,144,58,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,24,Train horn,142,46,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,25,Truck,112,17,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,26,Ukulele,131,30,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,42,27,"Violin, fiddle",151,112,20,20.0,outputs/ave/if20/seed_42/dataset/train_subset_manifest.csv
+if20,73,0,Accordion,124,19,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,1,Acoustic guitar,150,100,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,2,"Baby cry, infant cry",67,10,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,3,Banjo,147,80,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,4,Bark,137,33,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,5,Bus,57,9,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,6,Cat,48,7,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,7,Chainsaw,128,27,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,8,Church bell,151,125,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,9,Clock,128,24,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,10,"Female speech, woman speaking",141,41,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,11,"Fixed-wing aircraft, airplane",148,90,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,12,Flute,138,37,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,13,Frying (food),146,72,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,14,Goat,80,11,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,15,Helicopter,144,64,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,16,Horse,52,8,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,17,"Male speech, man speaking",142,52,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,18,Mandolin,126,21,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,19,Motorcycle,81,12,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,20,"Race car, auto racing",152,140,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,21,"Rodents, rats, mice",89,15,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,22,Shofar,82,14,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,23,Toilet flush,144,58,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,24,Train horn,142,46,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,25,Truck,112,17,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,26,Ukulele,131,30,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv
+if20,73,27,"Violin, fiddle",151,112,20,20.0,outputs/ave/if20/seed_73/dataset/train_subset_manifest.csv

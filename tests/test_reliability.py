@@ -63,7 +63,6 @@ def _tiny_model():
     ("config_name", "protocol", "output"),
     [
         ("ave_official.yaml", "official", "outputs/ave/official"),
-        ("ave_source_video_disjoint.yaml", "source_video_disjoint", "outputs/ave/source_video_disjoint"),
     ],
 )
 def test_protocol_configs_and_synthetic_artifact_paths(config_name, protocol, output, tmp_path):
@@ -93,7 +92,6 @@ def test_protocol_configs_and_synthetic_artifact_paths(config_name, protocol, ou
 
 @pytest.mark.parametrize("config_name,protocol,output", [
     ("ave_official.yaml", "official", "outputs/ave/official"),
-    ("ave_source_video_disjoint.yaml", "source_video_disjoint", "outputs/ave/source_video_disjoint"),
 ])
 def test_synthetic_reference_to_joint_path_for_each_protocol(config_name, protocol, output, tmp_path):
     config = yaml.safe_load((__import__("pathlib").Path("configs") / config_name).read_text())

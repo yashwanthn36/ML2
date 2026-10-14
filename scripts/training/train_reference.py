@@ -100,6 +100,8 @@ def main() -> None:
         dataset_metadata=getattr(train_set, "metadata", {}), class_to_id=train_set.class_to_id,
     )
     run_provenance["dataset_contract"] = contract
+    training_class_counts = torch.bincount(torch.as_tensor(train_set.labels, dtype=torch.long),
+                                           minlength=train_set.num_classes).tolist()
     (output / "training_estimation_ids.json").write_text(
         json.dumps({**contribution_metadata, "indices": estimation_indices, "sample_ids": estimation_ids,
                     "split_protocol": split_protocol, "seed": seed,
@@ -113,7 +115,8 @@ def main() -> None:
                                  data_metadata={**contribution_metadata, "provenance": run_provenance,
                                                 "dataset_metadata": getattr(train_set, "metadata", {}),
                                                 "dataset_contract": contract,
-                                                "class_to_id": train_set.class_to_id},
+                                                "class_to_id": train_set.class_to_id,
+                                                "training_class_counts": training_class_counts},
                                  device=selected_device)
     print(f"selected checkpoint: {checkpoint}")
 

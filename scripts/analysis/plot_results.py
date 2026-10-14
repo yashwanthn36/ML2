@@ -522,7 +522,7 @@ def main(argv: list[str] | None = None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--protocol", required=True, help="Configured dataset split protocol")
     parser.add_argument("--seed", type=int, help="Select one seed; omit to aggregate matching completed seeds")
-    parser.add_argument("--config", type=Path, help="Experiment YAML; defaults exist for the two AVE protocols")
+    parser.add_argument("--config", type=Path, help="Experiment YAML; defaults to the official AVE config")
     parser.add_argument("--provenance-manifest", type=Path,
                         help="Optional file whose hash is recorded in evaluation provenance; "
                              "use when cached-feature runs use an index file as their dataset identity")
@@ -532,8 +532,7 @@ def main(argv: list[str] | None = None):
                         help="Optional UCD targets for Figure 7; use SEED=PATH when aggregating seeds")
     parser.add_argument("--output-dir", type=Path, help="Override protocol report directory")
     args = parser.parse_args(argv)
-    default_cfg = {"official": "configs/ave_official.yaml",
-                   "source_video_disjoint": "configs/ave_source_video_disjoint.yaml"}.get(args.protocol)
+    default_cfg = {"official": "configs/ave_official.yaml"}.get(args.protocol)
     if args.config is None and default_cfg is None:
         raise ValueError("--config is required for protocols without a built-in AVE configuration")
     cfg_path = resolve(args.config or default_cfg)

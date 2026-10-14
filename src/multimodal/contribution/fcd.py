@@ -113,32 +113,47 @@ class InfoNCEFCD(nn.Module):
             raise ValueError("sample_ids must have one ID per FCD row")
         if source_ids is not None and len(source_ids) != z.shape[0]:
             raise ValueError("source_ids must have one ID per FCD row")
-        result_rows = []
-        for i in range(z.shape[0]):
+        # Assemble the detached queue once per batch. The previous anchor-wise
+        # implementation copied every queued tensor for every anchor, which
+        # caused thousands of tiny transfers and Python operations per step.
+        queued = [(value, identity, source) for value, identity, source in self._queue
+                  if value.device == z.device]
+        if queued:
+            queue_values = torch.cat([value for value, _, _ in queued], dim=0).to(dtype=z.dtype)
+            candidates = torch.cat((z, queue_values), dim=0)
+        else:
+            queued = []
+            candidates = z
+
+        batch_count = z.shape[0]
+        valid_rows = []
+        for i in range(batch_count):
             identity = None if sample_ids is None else str(sample_ids[i])
             source = None if source_ids is None else str(source_ids[i])
-            batch_keep = [j for j in range(z.shape[0])
-                          if j == i or identity is None or sample_ids is None
-                          or str(sample_ids[j]) != identity]
+            batch_keep = [j == i or identity is None or sample_ids is None
+                          or str(sample_ids[j]) != identity for j in range(batch_count)]
             if self.exclude_same_source_negatives and source is not None and source_ids is not None:
-                batch_keep = [j for j in batch_keep if j == i or str(source_ids[j]) != source]
-            historical = [value.to(device=z.device, dtype=z.dtype)
-                          for value, queue_id, queue_source in self._queue
-                          if value.device == z.device and (identity is None or queue_id != identity)
+                batch_keep = [keep and (j == i or str(source_ids[j]) != source)
+                              for j, keep in enumerate(batch_keep)]
+            queue_keep = [(identity is None or queue_id != identity)
                           and not (self.exclude_same_source_negatives and source is not None
-                                   and queue_source == source)]
-            candidates = torch.cat((z[batch_keep], *historical), dim=0) if historical else z[batch_keep]
-            if candidates.shape[0] < 2:
+                                   and queue_source == source)
+                          for _, queue_id, queue_source in queued]
+            keep = batch_keep + queue_keep
+            if sum(keep) < 2:
                 raise ValueError("InfoNCE has fewer than two valid candidates after configured sample/source "
                                  "exclusions; provide another independent example or queue negative")
-            modality_bounds = []
-            for current_x in (x1, x2):
-                scores = current_x[i] @ candidates.transpose(0, 1)
-                positive = (current_x[i] * z[i]).sum()
-                modality_bounds.append(torch.log(scores.new_tensor(float(candidates.shape[0])))
-                                       + positive - torch.logsumexp(scores, dim=-1))
-            result_rows.append(torch.stack(modality_bounds))
-        result = torch.stack(result_rows, dim=0)
+            valid_rows.append(keep)
+        valid = torch.tensor(valid_rows, dtype=torch.bool, device=z.device)
+        counts = valid.sum(dim=1).to(dtype=z.dtype)
+        log_counts = torch.log(counts)
+        modality_bounds = []
+        for current_x in (x1, x2):
+            scores = current_x @ candidates.transpose(0, 1)
+            positive = (current_x * z).sum(dim=1)
+            denominator = torch.logsumexp(scores.masked_fill(~valid, -torch.inf), dim=1)
+            modality_bounds.append(log_counts + positive - denominator)
+        result = torch.stack(modality_bounds, dim=1)
         if not torch.isfinite(result).all():
             raise ValueError("InfoNCE produced non-finite lower-bound estimates")
         if update_queue:
